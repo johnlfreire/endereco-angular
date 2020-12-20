@@ -1,0 +1,51 @@
+<p-card >
+  <form [formGroup]="form">
+  <div class="p-fluid p-formgrid p-grid" style="width: 600px">
+    <div class="p-field p-col">
+      <span>Cep:</span>
+      <p-inputMask inputId="cep" formControlName="cep"
+        mask="99999-999"
+        placeholder="00000-000"
+        (onComplete)="searchCep()"
+      ></p-inputMask>
+    </div>
+    <div class="p-field p-col"></div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid"  style="width: 700px">
+    <div class="p-field p-col">
+      <label for="logadouro">Logradouro:</label>
+      <input id="logradouro" formControlName="logradouro" type="text" pInputText />
+    </div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid"  style="width: 100px">
+    <div class="p-field p-col">
+      <label for="numero">Numero:</label>
+      <input id="numero" formControlName="numero" type="text" pInputText />
+    </div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid"  style="width: 700px">
+    <div class="p-field p-col">
+      <label for="complemento">Complemento:</label>
+      <input id="complemento" formControlName="complemento" type="text" pInputText />
+    </div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid" style="width: 700px">
+    <div class="p-field p-col">
+      <label for="bairro">Bairro:</label>
+      <input id="bairro" type="text" formControlName="bairro" pInputText />
+    </div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid" style="width: 200px">
+    <div class="p-field p-col">
+      <label for="uf">UF:</label>
+      <p-dropdown [options]="estados" inputId="uf"  formControlName="uf" placeholder="Selecione o estado" optionLabel="nome" optionValue="sigla" [showClear]="true"  (onChange)="dropdownEstado()"></p-dropdown>
+    </div>
+  </div>
+  <div class="p-fluid p-formgrid p-grid" style="width: 200px">
+    <div class="p-field p-col">
+      <label for="cidade">Cidade :</label>
+      <p-dropdown [options]="cidades" inputId="cidade" placeholder="Selecione a cidade" optionLabel="nome" optionValue="nome" [showClear]="true"  formControlName="cidade"></p-dropdown>
+    </div>
+  </div>
+</form>
+</p-card>
